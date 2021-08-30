@@ -575,3 +575,43 @@ Arthur remained very worried
  Oh yes   said Arthur   and how far s that   
 
  About twelve minutes away   said Ford   come on  I need a drink   `
+
+/*let splitted = text.toLowerCase().split(" ");
+let result = splitted.reduce((acc,curr) =>
+
+   if (acc[curr]=== undefined){
+       acc[curr]=1
+       
+   }else{acc[curr]++}
+   return acc
+     
+   },{}
+console.log(result)*/
+
+
+//sort
+
+let splitted = text.toLowerCase().split("");
+ let result = splitted.reduce((acc ,curr) => {
+    if ( acc[curr]=== undefined) {
+         acc[curr] = 1
+     }else {  acc[curr]++ }
+     return acc
+ }, {})
+let resultArr = Object.entries(result)
+let sortedArr=resultArr.sort((a,b) => b[1] - a[1])
+
+//remove all characters that appear less than 50 times
+
+let filteredArr=resultArr.filter((arr) => {
+     return arr[1]>50
+
+
+})
+console.log(filteredArr);
+
+
+//print the 10 least frequent characters
+
+console.log("the least 10 frequent characters: " ,filteredArr.slice(-10))
+
